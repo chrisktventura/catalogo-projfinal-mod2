@@ -19,10 +19,13 @@
     box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.32);
     padding: 2rem;
     gap:2rem;
+    border: 1px solid black;
 }
 
 #card{
     display: flex;
     flex-direction: row;    
     justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
 }

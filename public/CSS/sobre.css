@@ -14,7 +14,7 @@
     flex-wrap: wrap;
     padding: 12rem 0 2rem 0;
     text-align: center;
-    color: rgb(204,212,76);
+    color: white;
 }
 
 .contato {
@@ -25,6 +25,7 @@
     justify-content: center;
     margin-top: 2rem;
     padding-bottom: 5rem;
+    color: white;
 }
 
 .contato__bloco p {
