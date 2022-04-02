@@ -2,6 +2,7 @@ const express = require("express");
 const { url } = require("inspector");
 const path = require("path");
 const expressLayouts = require("express-ejs-layouts");
+const Lugares = require("./models/database/lugar");
 require("dotenv").config();
 
 const app = express();
@@ -17,40 +18,40 @@ app.use(expressLayouts);
 // const Lugar = require("./models/lugar");
 
 let lugar = undefined;
-let nextId = 5;
+// let nextId = 5;
 let message = "";
-let catalogo = [
-  {
-    id: 1,
-    lugar: "lugar aleatorio",
-    frase: "frase aleatoria",
-    descricao: "lkmsdlkfmsdlkfm",
-    localizacao: "dkmlsflkdmfslkm",
-    estrutura: "dsmflk",
-    outros: "kdlsmfksld",
-    imagem: "https://picsum.photos/200/300",
-  },
-  {
-    id: 2,
-    lugar: "lugar aleatorio2",
-    frase: "frase aleatoria",
-    descricao: "lkmsdlkfmsdlkfm",
-    localizacao: "dkmlsflkdmfslkm",
-    estrutura: "dsmflk",
-    outros: "kdlsmfksld",
-    imagem: "https://picsum.photos/200/300",
-  },
-  {
-    id: 3,
-    lugar: "lugar aleatorio3",
-    frase: "frase aleatoria",
-    descricao: "lkmsdlkfmsdlkfm",
-    localizacao: "dkmlsflkdmfslkm",
-    estrutura: "dsmflk",
-    outros: "kdlsmfksld",
-    imagem: "https://picsum.photos/200/300",
-  },
-];
+// let catalogo = [
+//   {
+//     id: 1,
+//     lugar: "lugar aleatorio",
+//     frase: "frase aleatoria",
+//     descricao: "lkmsdlkfmsdlkfm",
+//     localizacao: "dkmlsflkdmfslkm",
+//     estrutura: "dsmflk",
+//     outros: "kdlsmfksld",
+//     imagem: "https://picsum.photos/200/300",
+//   },
+//   {
+//     id: 2,
+//     lugar: "lugar aleatorio2",
+//     frase: "frase aleatoria",
+//     descricao: "lkmsdlkfmsdlkfm",
+//     localizacao: "dkmlsflkdmfslkm",
+//     estrutura: "dsmflk",
+//     outros: "kdlsmfksld",
+//     imagem: "https://picsum.photos/200/300",
+//   },
+//   {
+//     id: 3,
+//     lugar: "lugar aleatorio3",
+//     frase: "frase aleatoria",
+//     descricao: "lkmsdlkfmsdlkfm",
+//     localizacao: "dkmlsflkdmfslkm",
+//     estrutura: "dsmflk",
+//     outros: "kdlsmfksld",
+//     imagem: "https://picsum.photos/200/300",
+//   },
+// ];
 
 
 // app.get("/", async (req, res) => {
@@ -70,10 +71,12 @@ let catalogo = [
 //     });
 // });
 
-app.get("/", (req, res) => {
-  res.render("index", {catalogo});
+app.get("/", async(req, res) => {
+  await Lugares.update({ lugar: "lugar aleatorio 2" }, { where: { id: 1 } });
+  const lugares = await Lugares.findAll();
+  console.log(lugares)
+  res.render("index", { lugares });
 });
-
 app.get("/cadastrar", (req, res) => {
   res.render("cadastrar", catalogo);
 });
