@@ -14,6 +14,8 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded());
 app.use(expressLayouts);
 
+// const Lugar = require("./models/lugar");
+
 let lugar = undefined;
 let nextId = 5;
 let message = "";
@@ -49,6 +51,24 @@ let catalogo = [
     imagem: "https://picsum.photos/200/300",
   },
 ];
+
+
+// app.get("/", async (req, res) => {
+//   const lugares = await Lugar.findAll();
+//   console.log(lugares);
+//   console.log(typeof(lugares));
+//   res.render("index", {
+//     lugares,
+//   });
+// });
+
+// app.get("/lugares/:id", async (req, res) => {
+//     const lugar = await Lugar.findByPk(req.params.id);
+
+//     res.render("detalhes", {
+//         lugar,
+//     });
+// });
 
 app.get("/", (req, res) => {
   res.render("index", {catalogo});

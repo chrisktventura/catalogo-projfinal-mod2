@@ -70,15 +70,15 @@
 
 }
 
-/* .btn {
+.container_btn .btn {
     border-radius: 5px;
     border: none;
     font-family: Ubuntu;
     padding: 8px;
     margin-top: 15px;
-    background-color: rgb(4, 99, 161);
+    background-color: rgb(16, 84, 129);
     color: white;
-} */
+}
 
 .btn:hover {
     cursor: pointer;
