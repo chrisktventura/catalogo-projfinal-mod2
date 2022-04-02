@@ -15,7 +15,7 @@ const Lugar = database.define("lugares", {
   frase: Sequelize.STRING,
   descricao: Sequelize.STRING,
   estrutura: Sequelize.STRING,
-  outros: Sequelize.STRING,
+  atividades: Sequelize.STRING,
   imagem: {
     type: Sequelize.STRING,
     allowNull: false,
