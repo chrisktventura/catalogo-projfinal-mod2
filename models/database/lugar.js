@@ -18,6 +18,7 @@ const Lugar = database.define("lugares", {
     atividades: Sequelize.STRING,
     imagem: {
         type: Sequelize.STRING,
+        allowNull: false,
     },
 }, {
     freezeTableName: true,

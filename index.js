@@ -2,8 +2,8 @@ const express = require("express");
 const { url } = require("inspector");
 const path = require("path");
 const expressLayouts = require("express-ejs-layouts");
-const Lugares = require("./models/database/lugar");
 require("dotenv").config();
+const Lugar = require("./models/database/lugar");
 
 const app = express();
 
@@ -15,10 +15,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded());
 app.use(expressLayouts);
 
-// const Lugar = require("./models/lugar");
-
 let lugar = undefined;
-// let nextId = 5;
 let message = "";
 // let catalogo = [
 //   {
@@ -56,8 +53,6 @@ let message = "";
 
 // app.get("/", async (req, res) => {
 //   const lugares = await Lugar.findAll();
-//   console.log(lugares);
-//   console.log(typeof(lugares));
 //   res.render("index", {
 //     lugares,
 //   });
@@ -70,13 +65,19 @@ let message = "";
 //         lugar,
 //     });
 // });
+// app.get("/", async(req, res) => {
+//   await Lugares.update({ lugar: "lugar aleatorio 2" }, { where: { id: 1 } });
+//   const lugares = await Lugares.findAll();
+//   console.log(lugares)
+//   res.render("index", { lugares });
+// });
 
 app.get("/", async(req, res) => {
-  await Lugares.update({ lugar: "lugar aleatorio 2" }, { where: { id: 1 } });
-  const lugares = await Lugares.findAll();
+  const lugares = await Lugar.findAll();
   console.log(lugares)
   res.render("index", { lugares });
 });
+
 app.get("/cadastrar", (req, res) => {
   res.render("cadastrar", catalogo);
 });
