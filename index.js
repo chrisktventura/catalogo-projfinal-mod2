@@ -17,60 +17,7 @@ app.use(expressLayouts);
 
 let lugar = undefined;
 let message = "";
-// let catalogo = [
-//   {
-//     id: 1,
-//     lugar: "lugar aleatorio",
-//     frase: "frase aleatoria",
-//     descricao: "lkmsdlkfmsdlkfm",
-//     localizacao: "dkmlsflkdmfslkm",
-//     estrutura: "dsmflk",
-//     outros: "kdlsmfksld",
-//     imagem: "https://picsum.photos/200/300",
-//   },
-//   {
-//     id: 2,
-//     lugar: "lugar aleatorio2",
-//     frase: "frase aleatoria",
-//     descricao: "lkmsdlkfmsdlkfm",
-//     localizacao: "dkmlsflkdmfslkm",
-//     estrutura: "dsmflk",
-//     outros: "kdlsmfksld",
-//     imagem: "https://picsum.photos/200/300",
-//   },
-//   {
-//     id: 3,
-//     lugar: "lugar aleatorio3",
-//     frase: "frase aleatoria",
-//     descricao: "lkmsdlkfmsdlkfm",
-//     localizacao: "dkmlsflkdmfslkm",
-//     estrutura: "dsmflk",
-//     outros: "kdlsmfksld",
-//     imagem: "https://picsum.photos/200/300",
-//   },
-// ];
 
-
-// app.get("/", async (req, res) => {
-//   const lugares = await Lugar.findAll();
-//   res.render("index", {
-//     lugares,
-//   });
-// });
-
-// app.get("/lugares/:id", async (req, res) => {
-//     const lugar = await Lugar.findByPk(req.params.id);
-
-//     res.render("detalhes", {
-//         lugar,
-//     });
-// });
-// app.get("/", async(req, res) => {
-//   await Lugares.update({ lugar: "lugar aleatorio 2" }, { where: { id: 1 } });
-//   const lugares = await Lugares.findAll();
-//   console.log(lugares)
-//   res.render("index", { lugares });
-// });
 
 app.get("/", async(req, res) => {
   const lugares = await Lugar.findAll();
