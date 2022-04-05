@@ -22,7 +22,7 @@
     /*background-color: rgb(108, 172, 120);*/
     gap: 25px;
     font-family: Ubuntu;
-    color:white;
+    color:#403D3A;
     padding-top: 8rem;
     padding-bottom: 8rem;
 }
@@ -76,12 +76,12 @@
     font-family: Ubuntu;
     padding: 8px;
     margin-top: 15px;
-    background-color: rgb(16, 84, 129);
+    background-color: #2da386;
     color: white;
 }
 
 .btn:hover {
     cursor: pointer;
     background-color: white;
-    color: rgb(4, 99, 161);
+    color: #2da386;
 }

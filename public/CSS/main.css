@@ -7,14 +7,9 @@
     background: #e4e6e3;
 }
 main{
-    background: rgb(255,192,0);
-    background: linear-gradient(254deg, rgba(255,192,0,1) 0%, rgba(209,116,41,1) 24%, rgba(0,31,255,1) 100%); 
+    background:rgb(238, 234, 234);
 }
 
-/* .img-carousel{
-    align-items: center;
-    justify-content: center;
-} */
 
 .img-carousel {
     width: 100%;
@@ -39,18 +34,27 @@ a {
     align-items: center;
     padding: 1.2rem 0 .8rem 0;
     font-family: Futura Md Bt;
-    background-color:rgb(2,0,36);
+    background-color:#2da386;
     color: white;
     margin-bottom: 0rem;
 }
 
 .navbar {
     /* background-color: #6399cc; */
-    background: rgb(11,0,97);
-    background: linear-gradient(114deg, rgba(11,0,97,1) 0%, rgba(41,129,209,1) 47%, rgba(0,9,71,1) 100%); 
+    background: #2da386;
 }
 
 .offcanvas-body {
-    background: rgb(2,0,36);
-    background: linear-gradient(51deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    background: #2da386;
+}
+
+.card-link{
+
+    text-decoration: none;
+
+}
+
+.card-link:hover{
+    width: 20%;
+    height: 20%;
 }

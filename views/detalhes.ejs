@@ -3,15 +3,15 @@
     <section> 
         <div class="card card__detalhes mx-auto" style="width: 35rem;">
             <button type="button" class="btn-close btn-close-black" aria-label="Close"></button>
-            <img src="IMG/viagem1.jpg" class="card-img-top" alt="imagem-viagem">
+            <img src="<%=catalogo.imagem%>" class="card-img-top" alt="imagem-viagem">
             <div class="card-body">
-              <h5 class="card-title">NOME DO LUGAR</h5>
-              <p class="card-text">FRASE DE DESTAQUE DO LOCAL</p>
+              <h5 class="card-title"><%=catalogo.lugar%></h5>
+              <p class="card-text"><%=catalogo.frase%></p>
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item"><strong>Descrição:</strong>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil nisi magni unde doloribus incidunt quibusdam voluptate odit, reiciendis animi necessitatibus.</li>
-              <li class="list-group-item"><strong>Estrutura:</strong> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet, nobis.</li>
-              <li class="list-group-item"><strong>Atividadesr:</strong> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium, quod!</li>
+              <li class="list-group-item"><strong>Descrição:</strong><%=catalogo.descricao%></li>
+              <li class="list-group-item"><strong>Estrutura:</strong><%=catalogo.estrutura%></li>
+              <li class="list-group-item"><strong>Atividadesr:</strong><%=catalogo.atividades%></li>
             </ul>
             <div class="card-body">
               <a href="/" class="card-link">Voltar</a>
