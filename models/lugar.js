@@ -1,5 +1,5 @@
 const Sequelize = require("sequelize");
-const database = require("./../database");
+const database = require("./database/index");
 
 const Lugar = database.define("lugares", {
     id: {

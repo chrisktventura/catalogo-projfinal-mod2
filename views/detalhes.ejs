@@ -3,22 +3,22 @@
     <section> 
         <div class="card card__detalhes mx-auto" style="width: 35rem;">
             <button type="button" class="btn-close btn-close-black" aria-label="Close"></button>
-            <img src="<%=catalogo.imagem%>" class="card-img-top" alt="imagem-viagem">
+            <img src="<%= lugar.imagem %>" class="card-img-top" alt="imagem-viagem">
             <div class="card-body">
-              <h5 class="card-title"><%=catalogo.lugar%></h5>
-              <p class="card-text"><%=catalogo.frase%></p>
+              <h5 class="card-title"><%= lugar.lugar %></h5>
+              <p class="card-text"><%= lugar.frase %></p>
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item"><strong>Descrição:</strong><%=catalogo.descricao%></li>
-              <li class="list-group-item"><strong>Estrutura:</strong><%=catalogo.estrutura%></li>
-              <li class="list-group-item"><strong>Atividadesr:</strong><%=catalogo.atividades%></li>
+              <li class="list-group-item"><strong>Descrição:</strong><%= lugar.descricao %></li>
+              <li class="list-group-item"><strong>Estrutura:</strong><%= lugar.estrutura %></li>
+              <li class="list-group-item"><strong>Atividades:</strong><%= lugar.atividades %></li>
             </ul>
             <div class="card-body">
               <a href="/" class="card-link">Voltar</a>
-              <a href="/editar" class="card-link">Editar</a>
-              <a href="/delete" class="card-link">Apagar</a>
+              <a href="/editar/<%= lugar.id %>" class="card-link">Editar</a>
+              <a href="/deletar/<%= lugar.id %>" class="card-link">Apagar</a>
             </div>
           </div>
-</section>
- </main>
+  </section>
+</main>
  

@@ -19,7 +19,6 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    /*background-color: rgb(108, 172, 120);*/
     gap: 25px;
     font-family: Ubuntu;
     color:#403D3A;
@@ -33,7 +32,6 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    /*0background-color: rgb(56, 140, 165);*/
     gap: 25px;
     font-family: Ubuntu;
     color: white;
