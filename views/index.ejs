@@ -92,15 +92,15 @@
 
   <h2>Descubra novas Rotas!</h2>
   <section id="card">
-    <% lugares.forEach((catalogo) => {%>
+    <% lugares.forEach((lugar) => {%>
     <div class="card card_detalhes" style="width: 20rem; height: 30rem ;">
-      <img src="<%=catalogo.imagem%>" class="card-img-top" alt="imagem-viagem"/>
+      <img src="<%=lugar.imagem%>" class="card-img-top" alt="imagem-viagem" width="100" >
       <div class="card-body">
-        <h5 class="card-title"><%= catalogo.lugar %></h5>
-        <p class="card-text"><%= catalogo.frase %></p>
+        <h5 class="card-title"><%= lugar.lugar %></h5>
+        <p class="card-text"><%= lugar.frase %></p>
       </div>
       <div class="card-body">
-        <a href="/detalhes/<%=catalogo.id%>" class="card-link">Saiba Mais</a>
+        <a href="/detalhes/<%=lugar.id%>" class="card-link">Saiba Mais</a>
       </div>
     </div>
     <% }) %>
