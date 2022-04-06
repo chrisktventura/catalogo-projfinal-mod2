@@ -32,7 +32,7 @@ const Lugar = database.define(
 );
 
 const initTable = async () => {
-  await Lugares.sync();
+  await Lugar.sync();
 };
 
 module.exports = Lugar;
