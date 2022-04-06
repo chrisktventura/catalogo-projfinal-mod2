@@ -30,7 +30,7 @@ app.get("/", async(req, res) => {
 
 // GET CADASTRO
 app.get("/cadastrar", (req, res) => {
-   res.render("cadastrar", {lugares: lugares});
+   res.render("cadastrar", {lugares: lugares, message});
 });
 
 // POST CADASTRO
@@ -64,7 +64,7 @@ app.post("/cadastrar", async (req, res) => {
 //GET DETALHES
 app.get("/detalhes/:id", async (req, res) => {
   const lugar = await Lugar.findByPk(req.params.id);
-  res.render("detalhes", { lugar: lugar });
+  res.render("detalhes", { lugar: lugar, message });
 });
 
 
@@ -79,7 +79,7 @@ app.get("/editar/:id", async (req, res) => {
   }
 
   res.render("editar", {
-    lugar, message: ""
+    lugar, message
   });
 });
 
