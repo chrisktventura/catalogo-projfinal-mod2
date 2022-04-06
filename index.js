@@ -5,6 +5,7 @@ const expressLayouts = require("express-ejs-layouts");
 require("dotenv").config();
 const Lugar = require("./models/lugar");
 
+
 const app = express();
 
 const port = process.env.PORT || 3001;
