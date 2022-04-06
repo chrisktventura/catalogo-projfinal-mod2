@@ -30,42 +30,40 @@
     <div class="carousel-inner mx-auto">
       <div class="carousel-item active">
         <img
-          src="https://i0.wp.com/www.fastpassviagens.com.br/wp-content/uploads/2014/07/wallpaper6-800x600.jpg?fit=800%2C600&ssl=1"
+          src="https://blog.tzviagens.com.br/wp-content/uploads/2013/07/shutterstock_104016836_View-of-canal-belfry-and-houses-at-Bruges-Belgium_baixa.jpg"
           class="mx-auto d-block w-75"
           alt="..."
         />
         <div class="carousel-caption d-none d-md-block">
-          <h5>AQUI ESTA A IMAGEM 1</h5>
+          <h5>Bruges - Bélgica 1</h5>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, vitae!
+            Bruges, uma ciadde de conto de fadas
           </p>
         </div>
       </div>
       <div class="carousel-item">
         <img
-          src="https://i1.wp.com/www.fastpassviagens.com.br/wp-content/uploads/2014/07/wallpaper7-800x600.jpg?ssl=1"
+          src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/ea/98/1e/photo0jpg.jpg?w=1200&h=-1&s=1"
           class="mx-auto d-block w-75"
           alt="..."
         />
         <div class="carousel-caption d-none d-md-block">
-          <h5>AQUI ESTA A IMAGEM 2</h5>
+          <h5>Furano - Japão</h5>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus,
-            accusamus.
+            Lindos campos de flores e lavanda
           </p>
         </div>
       </div>
       <div class="carousel-item">
         <img
-          src="https://quantocustaviajar.com/blog/wp-content/uploads/2019/03/economize-viagem-de-onibus-buser-2.jpg"
+          src="https://www.melhoresdestinos.com.br/wp-content/uploads/2020/12/quanto-custa-viajar-maldivas-capa2019-01-820x430.jpg"
           class="mx-auto d-block w-75"
           alt="..."
         />
         <div class="carousel-caption d-none d-md-block">
-          <h5>AQUI ESTA A IMAGEM 3</h5>
+          <h5>Maldivas</h5>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati,
-            a?
+            Um lugar que parece uma pintura de tão belo
           </p>
         </div>
       </div>
@@ -90,19 +88,17 @@
     </button>
   </div></section>
 
-
+  <h2>Descubra novas Rotas!</h2>
   <section id="card">
-    <% lugares.forEach((catalogo) => {%>
-    <div class="card card__detalhes" style="width: 20rem">
-      <img src="<%=catalogo.imagem%>" class="card-img-top" alt="imagem-viagem" />
+    <% lugares.forEach((lugar) => {%>
+    <div class="card card_detalhes" style="width: 20rem; height: 30rem ;">
+      <img src="<%=lugar.imagem%>" class="card-img-top" alt="imagem-viagem" width="100" >
       <div class="card-body">
-        <h5 class="card-title"><%= catalogo.lugar %></h5>
-        <p class="card-text"><%= catalogo.frase %></p>
+        <h5 class="card-title"><%= lugar.lugar %></h5>
+        <p class="card-text"><%= lugar.frase %></p>
       </div>
       <div class="card-body">
-        <a href="/detalhes/<%=catalogo.id%>" class="card-link">Detalhes</a>
-        <a href="/editar/<%=catalogo.id%>" class="card-link">Editar</a>
-        <a href="/delete/<%=catalogo.id%>" class="card-link">Apagar</a>
+        <a href="/detalhes/<%=lugar.id%>" class="card-link">Saiba Mais</a>
       </div>
     </div>
     <% }) %>
