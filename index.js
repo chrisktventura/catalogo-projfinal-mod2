@@ -27,10 +27,12 @@ app.get("/", async(req, res) => {
   res.render("index", { lugares: lugares, message });
 });
 
+// GET CADASTRO
 app.get("/cadastrar", (req, res) => {
    res.render("cadastrar", {lugares: lugares});
 });
 
+// POST CADASTRO
 app.post("/cadastrar", async (req, res) => {
   try {
       const { lugar, frase, descricao, estrutura, atividades, imagem } = req.body;    
@@ -58,13 +60,14 @@ app.post("/cadastrar", async (req, res) => {
   }
 });
 
+//GET DETALHES
 app.get("/detalhes/:id", async (req, res) => {
   const lugar = await Lugar.findByPk(req.params.id);
   res.render("detalhes", { lugar: lugar });
 });
 
 
-
+// GET EDITAR
 app.get("/editar/:id", async (req, res) => {
   const lugar = await Lugar.findByPk(req.params.id);
 
@@ -79,6 +82,8 @@ app.get("/editar/:id", async (req, res) => {
   });
 });
 
+
+// POST EDITAR
 app.post("/editar/:id", async (req, res) => {
   lugar = await Lugar.findByPk(req.params.id);
   console.log(lugar);
@@ -101,7 +106,7 @@ app.post("/editar/:id", async (req, res) => {
   });
 });
 
-
+// GET DELETAR
 app.get("/deletar/:id", async (req, res) => {
   const lugar = await Lugar.findByPk(req.params.id);
 
@@ -116,6 +121,8 @@ app.get("/deletar/:id", async (req, res) => {
   });
 });
 
+
+// POST DELETAR
 app.post("/deletar/:id", async (req, res) => {
   const lugar = await Lugar.findByPk(req.params.id);
 

@@ -31,8 +31,7 @@ const Lugar = database.define(
   }
 );
 
-const initTable = async () => {
-  await Lugar.sync();
-};
+
+
 
 module.exports = Lugar;
