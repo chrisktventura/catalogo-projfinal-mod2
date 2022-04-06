@@ -1,33 +1,35 @@
 <main>
-    <div class="containe_form_editar" action="/editar" method="POST">
+    <span><% if(message != ""){ message } %></span>
+    <div class="containe_form_editar" action="/editar/<%=lugar.id%>" method="POST">
         <form class="formulario">
             <h2>Atualize sua experiência!</h2>
             <div>
                 <label for="lugar"> Lugar:</label>
-                <input type="text" id="lugar" value="<%=lugar.lugar%>">
+                <input type="text" id="lugar" value="<%=lugar.lugar%>" required>
             </div>
             <div>
-                <label for="frase"> Frase:</label>
-                <input type="text" id="frase" value="<%=lugar.frase%>">
+          <label for="frase"> Frase:</label>
+                <input type="text" id="frase" value="<%=lugar.frase%>" required>
             </div>
             <div>
                 <label for="descricao">Descrição:</label>
-                <input type="text" id="descricao" value="<%=lugar.descricao%>">
+                <input type="text" id="descricao" value="<%=lugar.descricao%>" required>
             </div>
             <div>
                 <label for="atividades">Atividades:</label>
-                <input type="text" id="atividades" value="<%=lugar.atividades%>">
+                <input type="text" id="atividades" value="<%=lugar.atividades%>" required>
             </div>
             <div>
                 <label for="estrutura">Estrutura:</label>
-                <input type="text" id="estrutura" value="<%=lugar.estrutura%>">
+                <input type="text" id="estrutura" value="<%=lugar.estrutura%>" required>
             </div>
             <div>
                 <label for="imagem">Imagem:</label>
-                <input type="text" id="imagem" value="<%=lugar.imagem%>">
+                <input type="text" id="imagem" value="<%=lugar.imagem%>" required>
             </div>
             <span class="container_btn">
                 <button  class="btn" type="submit"><b>Atualizar</b></button>
+
             </span>
         </form>
         <div class="img">

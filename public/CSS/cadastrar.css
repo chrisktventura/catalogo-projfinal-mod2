@@ -34,7 +34,7 @@
     align-items: center;
     gap: 25px;
     font-family: Ubuntu;
-    color: white;
+    color: #403D3A;
     padding-top: 8rem;
     padding-bottom: 3rem;
 
@@ -54,7 +54,7 @@
 
 .formulario div input {
     margin: 8px;
-    width: 180px;
+    width: 250px;
     background-color: white;
     box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.12);
     border-radius: 5px;

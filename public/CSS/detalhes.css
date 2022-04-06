@@ -5,7 +5,9 @@
 .card__detalhes{
     display: flex;
     flex-wrap:wrap;
-    margin: 5em;
+    margin-top: 5em;
+    margin-left: 5rem;
+    margin-right: 5rem;
     align-items: center;
     font-family: 'Ubuntu', sans-serif;
     color: rgb(167,196,104);

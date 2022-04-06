@@ -24,7 +24,7 @@ app.get("/", async(req, res) => {
     message="";
 }, 5000);
   const lugares = await Lugar.findAll();
-  res.render("index", { lugares: lugares, message: message });
+  res.render("index", { lugares: lugares, message });
 });
 
 app.get("/cadastrar", (req, res) => {
@@ -64,75 +64,95 @@ app.get("/detalhes/:id", async (req, res) => {
 });
 
 
+
 app.get("/editar/:id", async (req, res) => {
   const lugar = await Lugar.findByPk(req.params.id);
-  
+
   if (!lugar) {
     res.render("editar", {
-      message: ` ${lugares.lugar} não encontrado!`,
+      message: `${lugar.lugar} não encontrado!`,
     });
   }
 
   res.render("editar", {
-    lugar,
+    lugar, message: ""
   });
+});
 
 app.post("/editar/:id", async (req, res) => {
-    try {
-        const Lugar = await Lugar.findByPk(req.params.id);
+  lugar = await Lugar.findByPk(req.params.id);
+  console.log(lugar);
 
-        const { lugar, frase, descricao, estrutura, atividades, imagem } = req.body;
-        Lugar.lugar = lugar;
-        Lugar.frase = frase;
-        Lugar.descricao = descricao;
-        Lugar.estrutura = estrutura;
-        Lugar.atividades = atividades;
-        Lugar.imagem = imagem;
-       
-       const lugarEditado = await Lugar.save();
-        res.redirect("/", { lugar:lugar});
-    } catch (err){
-        res.status(500).send({
-            err: err.message || "Algum erro ocorreu ao carregar os dados."
-        });
-    }
+  const { lugar, frase, descricao, estrutura, atividades, imagem } = req.body;
+
+  lugar.lugar = lugar;
+  lugar.frase = frase;
+  lugar.descricao = descricao;
+  lugar.estrutura = estrutura;
+  lugar.atividades = atividades;
+  lugar.imagem = imagem;
+
+  const lugarEditado = await lugar.save();
+  console.log(lugarEditado);
+
+  res.render("editar", {
+    lugar: lugarEditado,
+    message: "Atulização efetuada com sucesso!",
+  });
 });
 
 
-
-app.post("/detalhes/:id", async (req, res) => {
+app.get("/deletar/:id", async (req, res) => {
   const lugar = await Lugar.findByPk(req.params.id);
-  
+
   if (!lugar) {
-    res.render("detalhes", {
+    res.render("deletar", {
       message: "Lugar não encontrado!",
     });
   }
-  
-  await lugar.destroy();
-  res.redirect("/", {
-    message: `Lugar ${Lugar.lugar} deletado com sucesso!`,
+
+  res.render("deletar", {
+    lugar,message: ""
   });
 });
 
-// app.post("/deletar/:id", async (req, res) => {
-  //   const lugar = await Lugar.findByPk(req.params.id);
+app.post("/deletar/:id", async (req, res) => {
+  const lugar = await Lugar.findByPk(req.params.id);
 
+  if (!lugar) {
+    res.render("deletar", {
+      message: "Lugar não encontrado!",
+    });
+  }
+
+  await lugar.destroy();
+  res.redirect("/");
+});
+
+
+// app.post("/detalhes/:id", async (req, res) => {
+//   const lugar = await Lugar.findByPk(req.params.id);
+//   console.log(lugar)
+  
 //   if (!lugar) {
-//     res.render("deletar", {
-//       message: "Filme não encontrado!",
+//     res.render("detalhes", {
+//       message: "Lugar não encontrado!",
 //     });
 //   }
-
-//   await lugar.destroy();
-//   res.redirect("/");
+  
+//   lugar.destroy();
+ 
+//   res.redirect("/", {
+    
+//     message: `Lugar ${lugar.lugar} deletado com sucesso!`,
+//   });
 // });
  
   
 app.get("/sobre", (req, res) => {
     res.render("sobre");
   });
-});
+//});
   
 
 

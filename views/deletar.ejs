@@ -1,0 +1,20 @@
+<main>
+    <section>
+        <div class="container ct-delete">
+            <span><% if(message != ""){ message } %></span>
+            <form method="POST" action="/deletar/<%= lugar.id %>">
+                <div class="item txt-delete"  >
+                    <h2>Dejesa realmente deletar?</h2>
+                    <span><%= lugar.lugar %></span>
+                </div>
+                <div class="item img-delete">
+                    <img src="<%= lugar.imagem %>" alt="capa do catálogo" width="800">
+                </div>
+                <div class="item">
+                    <a href="/detalhes/<%= lugar.id %>">Cancelar</a>
+                    <Button type="submit">confirmar Exclusão</Button>
+                </div>
+            </form>
+        </div>
+  </section>
+</main>
