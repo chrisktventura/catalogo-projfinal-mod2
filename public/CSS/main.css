@@ -70,6 +70,7 @@ section#message {
 .navbar {
     /* background-color: #6399cc; */
     background: #2da386;
+    position:sticky;
 }
 
 .offcanvas-body {

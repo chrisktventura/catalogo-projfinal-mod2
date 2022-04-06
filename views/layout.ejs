@@ -12,7 +12,7 @@
     </head>
     <body class="bg-body">
         <header>
-            <nav class="navbar navbar-dark fixed-top">
+            <nav class="navbar navbar-dark sticky-top">
                 <div class="container-fluid">
                   <a class="navbar-brand" href="/"><img src="/IMG/logo4.png" width="200"></a>
                   <button class="navbar-toggler " id="btn-nav" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
@@ -42,12 +42,7 @@
             </nav>
         </header>
         
-            <%- body %>
-            <% if(message != "") {  %>
-              <section id="message">
-                  <p><%= message %></p> <span id="close">&times;</span>
-              </section>
-          <% }  %>
+
             <footer>
                 <p class="copyright">&copy;Descobrindo Rotas | Todos os direitos reservados - 2022</p>
             </footer>
