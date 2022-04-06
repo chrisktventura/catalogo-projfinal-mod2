@@ -2,6 +2,7 @@
 
 # Projeto final do módulo 2
 
+## Deploy: https://catalogo-proj-final-blue.herokuapp.com/
 
 # Requisitos do Projeto
 
