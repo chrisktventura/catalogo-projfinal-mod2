@@ -33,13 +33,19 @@ app.get("/cadastrar", (req, res) => {
 
 app.post("/cadastrar", async (req, res) => {
   try {
-      const lugar = req.body;
-
+      const { lugar, frase, descricao, estrutura, atividades, imagem } = req.body;    
       if(!lugar) {
+        message = "Preencha o nome do lugar";
           return res.redirect("/cadastrar");
       }
-
-      await Lugar.create(lugar);
+      await Lugar.create({
+        lugar,
+        frase,
+        descricao,
+        estrutura,
+        atividades,
+        imagem
+      });
       message = `Seu cadastro foi realizado com sucesso!`;
       setTimeout(() => {
       message = "";
@@ -57,9 +63,10 @@ app.get("/detalhes/:id", async (req, res) => {
   res.render("detalhes", { lugar: lugar });
 });
 
+
 app.get("/editar/:id", async (req, res) => {
   const lugar = await Lugar.findByPk(req.params.id);
-
+  
   if (!lugar) {
     res.render("editar", {
       message: ` ${lugares.lugar} não encontrado!`,
@@ -70,12 +77,20 @@ app.get("/editar/:id", async (req, res) => {
     lugar,
   });
 
-app.post("/editar", (req, res) => {
+app.post("/editar/:id", async (req, res) => {
     try {
-        const lugar = req.body;
-        Lugar.update(lugar, {where: {id: req.params.id}});
-        message = ` ${lugares.lugar} editado com sucesso!`,
-        res.redirect("/");
+        const Lugar = await Lugar.findByPk(req.params.id);
+
+        const { lugar, frase, descricao, estrutura, atividades, imagem } = req.body;
+        Lugar.lugar = lugar;
+        Lugar.frase = frase;
+        Lugar.descricao = descricao;
+        Lugar.estrutura = estrutura;
+        Lugar.atividades = atividades;
+        Lugar.imagem = imagem;
+       
+       const lugarEditado = await Lugar.save();
+        res.redirect("/", { lugar:lugar});
     } catch (err){
         res.status(500).send({
             err: err.message || "Algum erro ocorreu ao carregar os dados."
@@ -83,32 +98,35 @@ app.post("/editar", (req, res) => {
     }
 });
 
-app.get("/deletar/:id", async (req, res) => {
-  const lugar = await Lugar.findByPk(req.params.id);
 
+
+app.post("/detalhes/:id", async (req, res) => {
+  const lugar = await Lugar.findByPk(req.params.id);
+  
   if (!lugar) {
-    res.render("deletar", {
-      message: "Filme não encontrado!",
+    res.render("detalhes", {
+      message: "Lugar não encontrado!",
     });
   }
-
-  res.render("deletar", {
-    lugar,message: ""
+  
+  await lugar.destroy();
+  res.redirect("/", {
+    message: `Lugar ${Lugar.lugar} deletado com sucesso!`,
   });
 });
 
-app.post("/deletar/:id", async (req, res) => {
-  const lugar = await Lugar.findByPk(req.params.id);
+// app.post("/deletar/:id", async (req, res) => {
+  //   const lugar = await Lugar.findByPk(req.params.id);
 
-  if (!lugar) {
-    res.render("deletar", {
-      message: "Filme não encontrado!",
-    });
-  }
+//   if (!lugar) {
+//     res.render("deletar", {
+//       message: "Filme não encontrado!",
+//     });
+//   }
 
-  await lugar.destroy();
-  res.redirect("/");
-});
+//   await lugar.destroy();
+//   res.redirect("/");
+// });
  
   
 app.get("/sobre", (req, res) => {
